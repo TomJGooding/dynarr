@@ -27,12 +27,12 @@
         (dynarr)->capacity = 0; \
     } while (0)
 
-#define dynarr_init_capacity(dynarr, capacity)  \
-    do {                                        \
-        (dynarr)->items = NULL;                 \
-        (dynarr)->len = 0;                      \
-        (dynarr)->capacity = 0;                 \
-        dynarray_reserve((dynarr), (capacity)); \
+#define dynarr_init_capacity(dynarr, capacity) \
+    do {                                       \
+        (dynarr)->items = NULL;                \
+        (dynarr)->len = 0;                     \
+        (dynarr)->capacity = 0;                \
+        dynarr_reserve((dynarr), (capacity));  \
     } while (0)
 
 #define dynarr_destroy(dynarr) free((dynarr)->items)
